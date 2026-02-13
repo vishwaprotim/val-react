@@ -1,6 +1,28 @@
 .valentine-page {
-  padding: 2rem;
+  position: relative;
+  min-height: 100vh;
+  padding: 3rem 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff5f7; /* very light pink */
 }
-.valentine-page h2 { margin-bottom: 0.5rem; }
-.valentine-page p { margin-bottom: 1rem; color: #374151; }
+
+/* Full-viewport soft hearts background rendered behind the page */
+.valentine-page::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23fca5a5' fill-opacity='0.12' d='M12 21s-6.716-4.686-9.055-7.025C-1.394 10.946 2.2 6 6.5 6c2.2 0 3.5 1.5 5.5 3.5 2-2 3.3-3.5 5.5-3.5C21.8 6 25.394 10.946 21.055 13.975 18.716 16.314 12 21 12 21z'/></svg>");
+  background-repeat: repeat;
+  background-size: 120px 120px;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.valentine-page h2 { margin-bottom: 0.5rem; color: #b91c1c; }
+.valentine-page p { margin-bottom: 1rem; color: #b91c1c; font-size: 21px; }
